@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7a5da78fd524abe9c4ecb626d4f8dea" Name="Diagram1">
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Detalle_Orden" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Detalle_Proveedor" Width="1.5" PointX="10.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Detalle_Receta" Width="1.5" PointX="10.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Detalle_Solicitud" Width="1.5" PointX="13.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Dificultad" Width="1.5" PointX="0.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Estado_Orden" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Estado_Reserva_Online" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Estado_Solicitud" Width="1.5" PointX="8.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Insumo" Width="1.5" PointX="8" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Log_Financiero" Width="1.5" PointX="10" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Mesa" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Orden" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Persona" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Proveedor" Width="1.5" PointX="8" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Receta" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Reserva" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Rol" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Solicitud" Width="1.5" PointX="11" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Tipo_Movimiento" Width="1.5" PointX="7.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Tipo_Receta" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Tipo_Reserva" Width="1.5" PointX="0.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Unidad_Medida" Width="1.5" PointX="5.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.Saldo" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_DETALLE_ORDEN" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_DIFICULTAD" Width="1.5" PointX="12.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_INSUMOS" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_MESAS" Width="1.5" PointX="3.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_ORDENES" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_ORDENES_A_COCINA" Width="1.5" PointX="14.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_ORDENES_SIN_PAGAR" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_PLATOS_RESUMEN" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_RECETAS" Width="1.5" PointX="5.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_TIPO_RECETA" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantSigloXXIModel.V_LISTAR_UNIDAD_MEDIDA" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Orden_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Orden_Orden" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Orden_Receta" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Insumo_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Proveedor_Detalle_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Receta_Insumo" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Receta_Receta" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Solicitud_Insumo" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Detalle_Solicitud_Solicitud" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Receta_Dificultad" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Reserva_Estado_Reserva" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Solicitud_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Insumo_Medida" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Tipo_Movimiento_Log" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Orden_Mesa" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Reserva_Mesa" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Reserva_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Usuario_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Receta_Tipo_Receta" ManuallyRouted="false" />
+        <AssociationConnector Association="RestaurantSigloXXIModel.FK_Reserva_Tipo_Reserva" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

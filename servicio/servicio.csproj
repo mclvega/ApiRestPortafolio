@@ -1,0 +1,472 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E7FD2DE-2529-4040-A8A8-E4E0FA43A8A2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>servicio</RootNamespace>
+    <AssemblyName>servicio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BDD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDD.edmx</DependentUpon>
+      <LastGenOutput>BDD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BDD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDD.edmx</DependentUpon>
+      <LastGenOutput>BDD.cs</LastGenOutput>
+    </Content>
+    <Content Include="Servicios.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BDD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleOrdenClase.cs" />
+    <Compile Include="DetalleRecetaClase.cs" />
+    <Compile Include="Detalle_Orden.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Proveedor.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Receta.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Detalle_Solicitud.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dificultad.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DificultadClase.cs" />
+    <Compile Include="Estado_Orden.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado_Reserva_Online.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado_Solicitud.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_DETALLE_DE_ORDEN_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTAR_RECETAS_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DETALLE_ORDEN_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_DETALLE_DE_RECETAS_BY_RECETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_DIFICULTADES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_INSUMOS_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_MESAS_LIBRES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_MESAS_OCUPADAS_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_MESAS_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_DIA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_EN_COCINA_POR_MESA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_EN_COCINA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_MES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_SIN_PAGAR_POR_MESA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_ORDENES_SIN_PAGAR_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_PLATOS_RESUMEN_DIA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_PLATOS_RESUMEN_MES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_PLATOS_RESUMEN_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_RECETAS_COMPLETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_RECETAS_MENU_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_RECETAS_MENU_TIPO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_TIPOS_DE_RECETAS_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_LISTA_DE_UNIDADES_DE_MEDIDAS_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_OBTENER_PERSONA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_RESUMEN_CLIENTES_DIA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_RESUMEN_CLIENTES_MES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_RESUMEN_FINANCIERO_DIARIO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_RESUMEN_FINANCIERO_MENSUAL_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_RESUMEN_MESAS_DIA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="F_RESUMEN_MESAS_MES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Insumo.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InsumoClase.cs" />
+    <Compile Include="IServicios.cs" />
+    <Compile Include="Log_Financiero.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mesa.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MesaClase.cs" />
+    <Compile Include="Orden.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenClase.cs" />
+    <Compile Include="OrdenesCocina.cs" />
+    <Compile Include="Persona.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTIVAR_INSUMO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTIVAR_RECETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_CLIENTE_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_ESTADO_ORDEN_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_INSUMO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_MESA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_ORDEN_PAGADA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_PRECIO_RECETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_RECETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_ACTUALIZAR_SALDO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CANCELAR_RESERVA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CREAR_ORDEN_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CREAR_RESERVA_ONLINE_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CREAR_USUARIO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_DESACTIVAR_CLIENTE_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_DESACTIVAR_INSUMO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_DESACTIVAR_RECETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_DESOCUPAR_MESA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_INSERTAR_INSUMO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_INSERTAR_LOG_FINANCIERO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_INSERTAR_MESA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_INSERTAR_ORDENES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_INSERTAR_RECETA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_OCUPAR_MESA_CON_RESERVA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_OCUPAR_MESA_SIN_RESERVA_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_REPONER_INSUMO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_REPORTE_DE_ERRORES_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_RESTAR_CANTIDAD_INSUMO_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Receta.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecetaClase.cs" />
+    <Compile Include="Reserva.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResumenMesas.cs" />
+    <Compile Include="ResumenClientes.cs" />
+    <Compile Include="Rol.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Saldo.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios.svc.cs">
+      <DependentUpon>Servicios.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitud.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t.cs" />
+    <Compile Include="TestOrden.cs" />
+    <Compile Include="Tipo_Movimiento.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Receta.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Reserva.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnidadMedidaClase.cs" />
+    <Compile Include="Unidad_Medida.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_DETALLE_ORDEN.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_DIFICULTAD.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_INSUMOS.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_MESAS.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_ORDENES.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_ORDENES_A_COCINA.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_ORDENES_SIN_PAGAR.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_PLATOS_RESUMEN.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_RECETAS.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_TIPO_RECETA.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_LISTAR_UNIDAD_MEDIDA.cs">
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BDD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BDD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BDD.edmx.diagram">
+      <DependentUpon>BDD.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50015</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2017/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:2017/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
